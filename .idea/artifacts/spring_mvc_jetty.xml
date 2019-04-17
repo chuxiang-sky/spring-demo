@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="spring-mvc:jetty">
+    <output-path>$PROJECT_DIR$/../../jetty/jetty-distribution-9.4.12.v20180830/webapps/spring-mvc</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="spring-mvc" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-websocket:5.1.5.RELEASE" />
+          <element id="library" level="project" name="Maven: commons-logging-api:1.1" />
+          <element id="library" level="project" name="Maven: commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: javax.servlet-api:4.0.1" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="spring-mvc/web/Web" />
+    </root>
+  </artifact>
+</component>

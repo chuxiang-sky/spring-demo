@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+        profile="dev">
+    <!-- XML配置中只能通过在beans标签上设置profile属性 -->
+    <bean id="devEnv4Xml" class="com.chuxiang.learn.spring.demo.bean.profile.interfaces.impl.DevelopmentEnvironment"/>
+</beans>

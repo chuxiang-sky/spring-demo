@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- IntelliJ IDEA可下载插件Spring Assistant，利用该插件创建Spring Config XML类型的文件 -->
+
+    <bean id="sushi" class="com.chuxiang.learn.spring.demo.bean.config.xmlConfig.Sushi" />
+
+
+    <!-- XML中声明DI时有多种可选配置方案和风格：构造器注入和设置属性注入 -->
+    <!-- 构造器注入有以下两种方式： -->
+    <!-- 1、<constructor-arg>元素 -->
+    <!-- 1.1、构造器注入bean引用 -->
+    <bean id="japanese" class="com.chuxiang.learn.spring.demo.bean.config.xmlConfig.Japanese">
+        <constructor-arg ref="sushi" />
+    </bean>
+    <!-- 1.2、构造器注入字面量 -->
+    <bean id="korean" class="com.chuxiang.learn.spring.demo.bean.config.xmlConfig.Korean">
+        <!-- 注入构造器的字面量顺序要保持和构造器参数一样 -->
+        <constructor-arg value="Song Hye Kyo"/>
+        <constructor-arg value="pickled vegetable"/>
+    </bean>
+    <!-- 1.3、构造器注入集合 -->
+    <bean id="indian" class="com.chuxiang.learn.spring.demo.bean.config.xmlConfig.Indian">
+        <constructor-arg value="Aamir Khan"/>
+        <constructor-arg>
+            <list>
+                <value>curry</value>
+                <value>rice</value>
+                <value>cooked wheaten food</value>
+            </list>
+        </constructor-arg>
+
+    </bean>
+
+
+    <!-- 2、使用Spring 3.0引入的c-命名空间，可以更加简洁地描述构造器参数 -->
+    <!-- 在顶部声明c-命名空间，xmlns:c="http://www.springframework.org/schema/c" -->
+    <!-- 2.1、构造器注入bean引用 -->
+    <bean id="japanese4c" class="com.chuxiang.learn.spring.demo.bean.config.xmlConfig.Japanese" c:food-ref="sushi" />
+    <bean id="japanese4c1" class="com.chuxiang.learn.spring.demo.bean.config.xmlConfig.Japanese" c:_0-ref="sushi"/>
+    <!-- 2.2、构造器注入字面量 -->
+    <bean id="korean4c" class="com.chuxiang.learn.spring.demo.bean.config.xmlConfig.Korean"
+            c:name="Song Hye Kyo" c:food="pickled vegetable"/>
+    <bean id="korean4c1" class="com.chuxiang.learn.spring.demo.bean.config.xmlConfig.Korean"
+          c:_0="Song Hye Kyo" c:_1="pickled vegetable"/>
+    <!-- 2.3、c-命名空间不支持构造器注入集合 -->
+
+    <!-- 设置属性注入使用方法和构造器注入类似 -->
+    <!-- 1、<property>元素除了和<constructor-arg>元素一样有ref和value属性值外，还有name属性值，用于指明bean的属性名称 -->
+    <!-- 2、p-命名空间和c-命名空间一样，需要在XML中声明xmlns:p="http://www.springframework.org/schema/p" -->
+    <bean id="japanese4p" class="com.chuxiang.learn.spring.demo.bean.config.xmlConfig.Japanese" p:food-ref="sushi"/>
+
+
+    <!-- 在XML配置中引用XML配置可使用<import>标签，引入JavaConfig可使用<bean>将该JavaConfig声明为一个Bean -->
+</beans>
