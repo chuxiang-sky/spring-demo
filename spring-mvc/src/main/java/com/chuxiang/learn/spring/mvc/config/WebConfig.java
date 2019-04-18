@@ -29,7 +29,7 @@ public class WebConfig extends WebMvcConfigurationSupport{
         // 创建一个InternalResourceViewResolver类型的视图解析器
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/views/");//设置前缀
-        resolver.setSuffix(".html");//设置后缀
+        resolver.setSuffix(".jsp");//设置后缀
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
     }
